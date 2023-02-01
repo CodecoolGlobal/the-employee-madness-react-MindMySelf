@@ -71,6 +71,12 @@ app.delete("/api/employees/:id", async (req, res, next) => {
   }
 });
 
+app.get("/robert", async (req, res) => {
+  const allEmployee = await EmployeeModel.find();
+  const roberts = allEmployee.filter((employee) => employee.name.includes("Robert"));
+  return res.json(roberts);
+})
+
 const main = async () => {
   await mongoose.connect(MONGO_URL);
 
