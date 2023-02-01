@@ -16,6 +16,28 @@ const EmployeeTable = ({ employees, onDelete }) => {
           <th>Position</th>
           <th />
         </tr>
+        <tr>
+          <th className="sorting-names">
+            <button onClick={() => setEmployeeList(employees.sort((a, b) => {
+              if(a.name.split(" ")[0] > b.name.split(" ")[0]) {
+                return -1
+              }else if(a.name.split(" ")[0] < b.name.split(" ")[0]){
+                return 1;
+              }else {
+                return 0;
+              }
+            }))}>Arrange by First Name</button>
+            <button>Arrange by Middle Name</button>
+            <button>Arrange by Last Name</button>
+          </th>
+          <th>
+            <button>Arrange by Level</button>
+          </th>
+          <th>
+            <button>Arrange by Position</button>
+          </th>
+          <th />
+        </tr>
       </thead>
       <tbody>
         {employeeList.map((employee) => (
