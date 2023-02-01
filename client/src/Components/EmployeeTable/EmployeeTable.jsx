@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeTable.css";
+import Filter from "../Filter";
 
-const EmployeeTable = ({ employees, onDelete }) => (
+const EmployeeTable = ({ employees, onDelete }) => {
+  const [employeeList, setEmployeeList] = useState(employees)
+  return (
   <div className="EmployeeTable">
+        <Filter originalEmployeeList={employees} setEmployeeList={setEmployeeList} />
     <table>
       <thead>
         <tr>
@@ -13,7 +18,7 @@ const EmployeeTable = ({ employees, onDelete }) => (
         </tr>
       </thead>
       <tbody>
-        {employees.map((employee) => (
+        {employeeList.map((employee) => (
           <tr key={employee._id}>
             <td>{employee.name}</td>
             <td>{employee.level}</td>
@@ -31,6 +36,6 @@ const EmployeeTable = ({ employees, onDelete }) => (
       </tbody>
     </table>
   </div>
-);
+)};
 
 export default EmployeeTable;
