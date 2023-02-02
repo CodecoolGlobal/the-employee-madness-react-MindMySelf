@@ -20,11 +20,15 @@ const pick = (from) => from[Math.floor(Math.random() * (from.length - 0))];
 const populateEmployees = async () => {
   await EmployeeModel.deleteMany({});
 
-  const employees = names.map((name) => ({
-    name,
+  const employees = names.map((name) => {
+    const splittedName = name.split(" ");
+    return  ({
+    firstName: splittedName[0],
+    middleName: splittedName.length === 3 ? splittedName[1] : "",
+    lastName: splittedName[splittedName.length - 1],
     level: pick(levels),
     position: pick(positions),
-  }));
+  })});
 
   await EmployeeModel.create(...employees);
   console.log("Employees created");

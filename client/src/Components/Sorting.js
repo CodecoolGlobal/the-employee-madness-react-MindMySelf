@@ -1,11 +1,14 @@
-export default function Sorting( sortby, {originalEmployeeList, setEmployeeList} ) {
-    if(sortby === "First Name") {
-        setEmployeeList(originalEmployeeList.sort((a, b) => {
-            if(a.name.split(" ")[0] > b.name.split(" ")[0]) {
-                return -1
-            }else if(a.name.split(" ")[0] < b.name.split(" ")[0]){
-                return 1;
-            }
-        }))
-    }
+export default function Sorting( sortby, {employeeList, setEmployeeList} ) {
+    let newList = [...employeeList];
+    newList.sort((a, b) => {
+        if(a[sortby] > b[sortby]) {
+            return 1;
+        }else if(a[sortby] < b[sortby]){
+            return -1;
+        }else {
+            return 0;
+        }
+    })
+
+    setEmployeeList(newList)
 }

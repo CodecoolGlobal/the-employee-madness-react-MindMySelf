@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeTable.css";
 import Filter from "../Filter";
+import Sorting from "../Sorting"
 
 const EmployeeTable = ({ employees, onDelete }) => {
   const [employeeList, setEmployeeList] = useState(employees);
@@ -11,34 +12,28 @@ const EmployeeTable = ({ employees, onDelete }) => {
     <table>
       <thead>
         <tr>
-          <th>Name</th>
+          <th>First name</th>
+          <th>Middle name</th>
+          <th>Last name</th>
           <th>Level</th>
           <th>Position</th>
           <th />
         </tr>
         <tr>
-          <th className="sorting-names">
-            <button onClick={() => {
-              const newList = [...employeeList];
-              newList.sort((a, b) => {
-                if(a.name.split(" ")[0] > b.name.split(" ")[0]) {
-                  return 1
-                }else if(a.name.split(" ")[0] < b.name.split(" ")[0]){
-                  return -1;
-                }else {
-                  return 0;
-                }
-              })
-              setEmployeeList(newList);
-              }}>Arrange by First Name</button>
-            <button onClick={() => console.log(employeeList.map((employee) => employee.name.split(" ")[0]))}>Arrange by Middle Name</button>
-            <button>Arrange by Last Name</button>
+          <th>
+            <button onClick={() => Sorting("firstName", { employeeList, setEmployeeList })}>Arrange by First Name</button>
           </th>
           <th>
-            <button>Arrange by Level</button>
+            <button onClick={() => Sorting("middleName", { employeeList, setEmployeeList })}>Arrange by Middle Name</button>
           </th>
           <th>
-            <button>Arrange by Position</button>
+            <button onClick={() => Sorting("lastName", { employeeList, setEmployeeList })}>Arrange by Last Name</button>
+          </th>
+          <th>
+            <button onClick={() => Sorting("level", { employeeList, setEmployeeList })}>Arrange by Level</button>
+          </th>
+          <th>
+            <button onClick={() => Sorting("position", { employeeList, setEmployeeList })}>Arrange by Position</button>
           </th>
           <th />
         </tr>
@@ -46,7 +41,9 @@ const EmployeeTable = ({ employees, onDelete }) => {
       <tbody>
         {employeeList.map((employee) => (
           <tr key={employee._id}>
-            <td>{employee.name}</td>
+            <td>{employee.firstName}</td>
+            <td>{employee.middleName}</td>
+            <td>{employee.lastName}</td>
             <td>{employee.level}</td>
             <td>{employee.position}</td>
             <td>
