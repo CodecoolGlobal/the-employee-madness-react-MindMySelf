@@ -4,7 +4,7 @@ import "./EmployeeTable.css";
 import Filter from "../Filter";
 
 const EmployeeTable = ({ employees, onDelete }) => {
-  const [employeeList, setEmployeeList] = useState(employees)
+  const [employeeList, setEmployeeList] = useState(employees);
   return (
   <div className="EmployeeTable">
         <Filter originalEmployeeList={employees} setEmployeeList={setEmployeeList} />
@@ -18,16 +18,20 @@ const EmployeeTable = ({ employees, onDelete }) => {
         </tr>
         <tr>
           <th className="sorting-names">
-            <button onClick={() => setEmployeeList(employees.sort((a, b) => {
-              if(a.name.split(" ")[0] > b.name.split(" ")[0]) {
-                return -1
-              }else if(a.name.split(" ")[0] < b.name.split(" ")[0]){
-                return 1;
-              }else {
-                return 0;
-              }
-            }))}>Arrange by First Name</button>
-            <button>Arrange by Middle Name</button>
+            <button onClick={() => {
+              const newList = [...employeeList];
+              newList.sort((a, b) => {
+                if(a.name.split(" ")[0] > b.name.split(" ")[0]) {
+                  return 1
+                }else if(a.name.split(" ")[0] < b.name.split(" ")[0]){
+                  return -1;
+                }else {
+                  return 0;
+                }
+              })
+              setEmployeeList(newList);
+              }}>Arrange by First Name</button>
+            <button onClick={() => console.log(employeeList.map((employee) => employee.name.split(" ")[0]))}>Arrange by Middle Name</button>
             <button>Arrange by Last Name</button>
           </th>
           <th>
