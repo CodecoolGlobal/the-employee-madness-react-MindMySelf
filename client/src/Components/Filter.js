@@ -8,7 +8,9 @@ const Filter = ( {originalEmployeeList, setEmployeeList} ) => {
             setEmployeeList(originalEmployeeList.filter((employee) => {
                 if(employee.level.includes(filterValue) || employee.position.includes(filterValue)) {
                     return employee;
-                }           
+                }else {
+                    return null;
+                }
             }));
         }else {
             setEmployeeList(originalEmployeeList);

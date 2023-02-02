@@ -6,6 +6,7 @@ import Sorting from "../Sorting"
 
 const EmployeeTable = ({ employees, onDelete }) => {
   const [employeeList, setEmployeeList] = useState(employees);
+  const [aToZ, setAToZ] = useState(true);
   return (
   <div className="EmployeeTable">
         <Filter originalEmployeeList={employees} setEmployeeList={setEmployeeList} />
@@ -21,19 +22,34 @@ const EmployeeTable = ({ employees, onDelete }) => {
         </tr>
         <tr>
           <th>
-            <button onClick={() => Sorting("firstName", { employeeList, setEmployeeList })}>Arrange by First Name</button>
+            <button onClick={() => {
+              setAToZ(!aToZ);
+              Sorting("firstName", { employeeList, setEmployeeList, aToZ });
+              }}>Arrange by First Name</button>
           </th>
           <th>
-            <button onClick={() => Sorting("middleName", { employeeList, setEmployeeList })}>Arrange by Middle Name</button>
+            <button onClick={() => {
+              setAToZ(!aToZ);
+              Sorting("middleName", { employeeList, setEmployeeList, aToZ });
+              }}>Arrange by Middle Name</button>
           </th>
           <th>
-            <button onClick={() => Sorting("lastName", { employeeList, setEmployeeList })}>Arrange by Last Name</button>
+            <button onClick={() => {
+              setAToZ(!aToZ);
+              Sorting("lastName", { employeeList, setEmployeeList, aToZ });
+          }}>Arrange by Last Name</button>
           </th>
           <th>
-            <button onClick={() => Sorting("level", { employeeList, setEmployeeList })}>Arrange by Level</button>
+            <button onClick={() => {
+              setAToZ(!aToZ);
+              Sorting("level", { employeeList, setEmployeeList, aToZ });
+              }}>Arrange by Level</button>
           </th>
           <th>
-            <button onClick={() => Sorting("position", { employeeList, setEmployeeList })}>Arrange by Position</button>
+            <button onClick={() => {
+              setAToZ(!aToZ);
+              Sorting("position", { employeeList, setEmployeeList, aToZ });
+              }}>Arrange by Position</button>
           </th>
           <th />
         </tr>
