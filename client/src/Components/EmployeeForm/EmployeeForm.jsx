@@ -20,11 +20,29 @@ const EmployeeForm = ({ onSave, disabled, employee, onCancel }) => {
       )}
 
       <div className="control">
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">First Name:</label>
         <input
-          defaultValue={employee ? employee.name : null}
-          name="name"
-          id="name"
+          defaultValue={employee ? employee.firstName : null}
+          name="firstName"
+          id="firstName"
+        />
+      </div>
+
+      <div className="control">
+        <label htmlFor="name">Middle Name:</label>
+        <input
+          defaultValue={employee ? employee.middleName : null}
+          name="middleName"
+          id="middleName"
+        />
+      </div>
+
+      <div className="control">
+        <label htmlFor="name">Last Name:</label>
+        <input
+          defaultValue={employee ? employee.lastName : null}
+          name="lastName"
+          id="lastName"
         />
       </div>
 
