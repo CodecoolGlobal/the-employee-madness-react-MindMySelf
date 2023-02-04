@@ -1,0 +1,8 @@
+.EmployeeTable {
+    padding: 0.5rem;
+  }
+  .sorting-names {
+    display: flex;
+    justify-content: space-around;
+  }
+  

@@ -9,6 +9,9 @@ import EmployeeList from "./Pages/EmployeeList";
 import EmployeeCreator from "./Pages/EmployeeCreator";
 import EmployeeUpdater from "./Pages/EmployeeUpdater";
 import Roberts from "./Pages/Roberts"
+import EquipmentList from "./Pages/EquipmentList";
+import EquipmentCreator from "./Pages/EquipmentCreator";
+import EquipmentUpdater from "./Pages/EquipmentUpdater";
 
 import "./index.css";
 import TableTest from "./Pages/TableTest";
@@ -20,9 +23,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
+      //Employee part
       {
         path: "/",
-        element: <EmployeeList />,
+        element: [<EmployeeList />, <EquipmentList />],
       },
       {
         path: "/create",
@@ -33,6 +37,26 @@ const router = createBrowserRouter([
         element: <EmployeeUpdater />,
       },
       {
+        path: "/robert",
+        element: <Roberts />
+      },
+      //
+      //Equipment part
+      // {
+      //   path: "/",
+      //   element: <EquipmentList />,
+      // },
+      // {
+      //   path: "/create",
+      //   element: <EquipmentCreator />,
+      // },
+      // {
+      //   path: "/update/:id",
+      //   element: <EquipmentUpdater />,
+      // },
+      
+      //Test part
+      {
         path: "/table-test",
         element: <TableTest />,
       },
@@ -40,10 +64,6 @@ const router = createBrowserRouter([
         path: "/form-test",
         element: <FormTest />,
       },
-      {
-        path: "/robert",
-        element: <Roberts />
-      }
     ],
   },
 ]);
