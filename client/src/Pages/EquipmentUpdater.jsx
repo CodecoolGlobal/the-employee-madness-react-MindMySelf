@@ -5,7 +5,7 @@ import EquipmentForm from "../Components/EquipmentForm";
 import Loading from "../Components/Loading";
 
 const updateEquipment = (equipment) => {
-  return fetch(`/api/employees/${equipment._id}`, {
+  return fetch(`/api/equipments/${equipment._id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const EquipmentUpdater = () => {
       });
   }, [id]);
 
-  const handleUpdateEmployee = (equipment) => {
+  const handleUpdateEquipment = (equipment) => {
     setUpdateLoading(true);
     updateEquipment(equipment)
       .then(() => {
@@ -59,7 +59,7 @@ const EquipmentUpdater = () => {
   return (
     <EquipmentForm
       equipment={equipment}
-      onSave={handleUpdateEmployee}
+      onSave={handleUpdateEquipment}
       disabled={updateLoading}
       onCancel={() => navigate("/")}
     />

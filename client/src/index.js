@@ -42,18 +42,15 @@ const router = createBrowserRouter([
       },
       //
       //Equipment part
-      // {
-      //   path: "/",
-      //   element: <EquipmentList />,
-      // },
-      // {
-      //   path: "/create",
-      //   element: <EquipmentCreator />,
-      // },
-      // {
-      //   path: "/update/:id",
-      //   element: <EquipmentUpdater />,
-      // },
+
+      {
+        path: "/equipment/create",
+        element: <EquipmentCreator />,
+      },
+      {
+        path: "/equipment/update/:id",
+        element: <EquipmentUpdater />,
+      },
       
       //Test part
       {
