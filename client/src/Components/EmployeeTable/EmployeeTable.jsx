@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import "./EmployeeTable.css";
 import Filter from "../Filter";
 import Sorting from "../Sorting"
+import editMissing from "../EditMissing";
 
 const EmployeeTable = ({ employees, onDelete }) => {
   const [employeeList, setEmployeeList] = useState(employees);
   const [aToZ, setAToZ] = useState(true);
+  console.log(employeeList);
   return (
   <div className="EmployeeTable">
         <Filter originalEmployeeList={employees} setEmployeeList={setEmployeeList} />
@@ -18,6 +20,7 @@ const EmployeeTable = ({ employees, onDelete }) => {
           <th>Last name</th>
           <th>Level</th>
           <th>Position</th>
+          <th>Present</th>
           <th />
         </tr>
         <tr>
@@ -62,6 +65,12 @@ const EmployeeTable = ({ employees, onDelete }) => {
             <td>{employee.lastName}</td>
             <td>{employee.level}</td>
             <td>{employee.position}</td>
+            <td>
+              <input
+              type="checkbox"
+              onClick={() => editMissing(employee)}
+              checked={employee.present}></input>
+            </td>
             <td>
               <Link to={`/update/${employee._id}`}>
                 <button type="button">Update</button>

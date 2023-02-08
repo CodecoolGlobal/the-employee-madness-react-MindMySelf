@@ -72,10 +72,22 @@ app.delete("/api/employees/:id", async (req, res, next) => {
   }
 });
 
+//Roberts endpoint
+
 app.get("/robert", async (req, res) => {
   const allEmployee = await EmployeeModel.find();
   const roberts = allEmployee.filter((employee) => employee.firstName.includes("Robert"));
   return res.json(roberts);
+})
+
+//
+
+//Missing/present endpoints
+
+app.get("/missing", async (req, res) => {
+  const allEmployee = await EmployeeModel.find();
+  const missing = allEmployee.filter((employee) => employee.present === false);
+  return res.json(missing);
 })
 
 //equipment

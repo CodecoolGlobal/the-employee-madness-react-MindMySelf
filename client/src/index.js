@@ -12,6 +12,7 @@ import Roberts from "./Pages/Roberts"
 import EquipmentList from "./Pages/EquipmentList";
 import EquipmentCreator from "./Pages/EquipmentCreator";
 import EquipmentUpdater from "./Pages/EquipmentUpdater";
+import MissingEmployees from "./Pages/MissingEmployees";
 
 import "./index.css";
 import TableTest from "./Pages/TableTest";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/robert",
         element: <Roberts />
+      },
+      {
+        path: "/missing",
+        element: <MissingEmployees />
       },
       //
       //Equipment part

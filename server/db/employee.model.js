@@ -9,6 +9,7 @@ const EmployeeSchema = new Schema({
   lastName: String,
   level: String,
   position: String,
+  present: Boolean,
   created: {
     type: Date,
     default: Date.now,
