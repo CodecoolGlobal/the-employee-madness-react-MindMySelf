@@ -27,7 +27,8 @@ const router = createBrowserRouter([
       //Employee part
       {
         path: "/",
-        element: [<EmployeeList />, <EquipmentList />],
+        element: <><EmployeeList />
+        <EquipmentList /></>,
       },
       {
         path: "/create",

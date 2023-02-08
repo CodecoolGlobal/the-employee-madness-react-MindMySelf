@@ -14,14 +14,14 @@ const deleteEmployee = (id) => {
 
 const EmployeeList = () => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [employees, setEmployees] = useState(null);
 
   const handleDelete = (id) => {
     deleteEmployee(id).catch((err) => {
       console.log(err);
     });
 
-    setData((employees) => {
+    setEmployees((employees) => {
       return employees.filter((employee) => employee._id !== id);
     });
   };
@@ -32,11 +32,11 @@ const EmployeeList = () => {
     fetchEmployees(controller.signal)
       .then((employees) => {
         setLoading(false);
-        setData(employees);
+        setEmployees(employees);
       })
       .catch((error) => {
         if (error.name !== "AbortError") {
-          setData(null);
+          setEmployees(null);
           throw error;
         }
       });
@@ -48,7 +48,7 @@ const EmployeeList = () => {
     return <Loading />;
   }
 
-  return <EmployeeTable employees={data} onDelete={handleDelete} />;
+  return <EmployeeTable employees={employees} setEmployees={setEmployees} onDelete={handleDelete} />;
 };
 
 export default EmployeeList;
