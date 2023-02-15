@@ -3,13 +3,16 @@ import "./ToolTable.css";
 const ToolTable = ({ tools }) => {
     const [nameFilter, setNameFilter] = useState();
     const filteredToolList = tools.filter((tool) => {
-        if(nameFilter === "" && nameFilter === tool.name)
-        return tool;
+        if(tool.name.includes(nameFilter)){
+          return tool;
+      }else {
+          return null;
+      }
     });
 
     return (
   <div className="ToolTable">
-    <input type="text" onChange={(e) => setNameFilter(e.target.value)}></input>
+    <input type="text" onChange={(e) => {setNameFilter(e.target.value); console.log(nameFilter);}}></input>
     <table>
       <thead>
         <tr>
