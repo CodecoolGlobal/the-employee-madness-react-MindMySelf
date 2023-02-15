@@ -16,6 +16,7 @@ if (!mongoUrl) {
 }
 
 const pick = (from) => from[Math.floor(Math.random() * (from.length - 0))];
+const pickSalary = (max, min) => Math.floor(Math.random() * max) + min;
 
 const populateEmployees = async () => {
   await EmployeeModel.deleteMany({});
@@ -24,6 +25,7 @@ const populateEmployees = async () => {
     name,
     level: pick(levels),
     position: pick(positions),
+    salary: pickSalary(61, 20),
   }));
 
   await EmployeeModel.create(...employees);

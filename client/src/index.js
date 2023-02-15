@@ -8,6 +8,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import EmployeeList from "./Pages/EmployeeList";
 import EmployeeCreator from "./Pages/EmployeeCreator";
 import EmployeeUpdater from "./Pages/EmployeeUpdater";
+import TopSalary from "./Pages/TopSalaries"
 
 import "./index.css";
 import TableTest from "./Pages/TableTest";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <EmployeeUpdater />,
+      },
+      {
+        path: "/top-paid",
+        element: <TopSalary />,
       },
       {
         path: "/table-test",

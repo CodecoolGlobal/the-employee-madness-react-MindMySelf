@@ -71,6 +71,12 @@ app.delete("/api/employees/:id", async (req, res, next) => {
   }
 });
 
+app.get("/top-paid", async (req, res) => {
+  const employeesBySalary = await EmployeeModel.find().sort({salary: "desc"});
+  const topThree = employeesBySalary.slice(0,3);
+  return res.json(topThree);
+})
+
 const main = async () => {
   await mongoose.connect(MONGO_URL);
 

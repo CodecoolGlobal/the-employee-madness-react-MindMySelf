@@ -13,6 +13,9 @@ const Layout = () => (
           <Link to="/create">
             <button type="button">Create Employee</button>
           </Link>
+          <Link to="/top-paid">
+            <button type="button">Top 3 Salaries</button>
+          </Link>
         </li>
       </ul>
     </nav>

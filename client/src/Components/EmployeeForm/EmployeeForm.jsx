@@ -46,6 +46,15 @@ const EmployeeForm = ({ onSave, disabled, employee, onCancel }) => {
         />
       </div>
 
+      <div className="control">
+        <label htmlFor="salary">Salary:</label>
+        <input
+          defaultValue={employee ? employee.salary : null}
+          name="salary"
+          id="salary"
+        />
+      </div>
+
       <div className="buttons">
         <button type="submit" disabled={disabled}>
           {employee ? "Update Employee" : "Create Employee"}
