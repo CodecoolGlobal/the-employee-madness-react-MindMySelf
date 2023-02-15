@@ -77,7 +77,7 @@ app.get("/tools", async (req, res) => {
   return res.json(toolList);
 });
 
-app.post("/tools/", async (req, res, next) => {
+app.post("/tools", async (req, res, next) => {
   const tool = req.body;
 
   try {

@@ -4,7 +4,7 @@ const {Schema} = mongoose;
 
 const ToolSchema = new Schema({
     name: String,
-    weigth: Number
+    weight: Number
 });
 
 module.exports = mongoose.model("Tool", ToolSchema);

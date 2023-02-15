@@ -19,7 +19,7 @@ if (!mongoUrl) {
 
 const pick = (from) => from[Math.floor(Math.random() * (from.length - 0))];
 
-const makeWeigth = (max, min) => Math.floor(Math.random() * max) - min;
+const makeWeight = (max, min) => Math.floor(Math.random() * max) - min;
 
 const populateEmployees = async () => {
   await EmployeeModel.deleteMany({});
@@ -39,7 +39,7 @@ const makeTools = async () => {
 
   const tools = toolnames.map((name) => ({
     name,
-    weigth: makeWeigth(5, 1)
+    weight: makeWeight(5, 1)
   }));
 
   await ToolModel.create(...tools);
