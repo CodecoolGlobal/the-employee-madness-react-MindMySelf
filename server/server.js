@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const EmployeeModel = require("./db/employee.model");
+const ToolModel = require("./db/tool.model");
 
 const { MONGO_URL, PORT = 8080 } = process.env;
 
@@ -66,6 +67,22 @@ app.delete("/api/employees/:id", async (req, res, next) => {
   try {
     const deleted = await req.employee.delete();
     return res.json(deleted);
+  } catch (err) {
+    return next(err);
+  }
+});
+
+app.get("/tools", async (req, res) => {
+  const toolList = await ToolModel.find();
+  return res.json(toolList);
+});
+
+app.post("/tools/", async (req, res, next) => {
+  const tool = req.body;
+
+  try {
+    const saved = await ToolModel.create(tool);
+    return res.json(saved);
   } catch (err) {
     return next(err);
   }

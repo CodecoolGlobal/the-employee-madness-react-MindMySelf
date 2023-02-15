@@ -12,6 +12,7 @@ import EmployeeUpdater from "./Pages/EmployeeUpdater";
 import "./index.css";
 import TableTest from "./Pages/TableTest";
 import FormTest from "./Pages/FormTest";
+import ToolList from "./Pages/ToolList";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <EmployeeUpdater />,
+      },
+      {
+        path: "/tools",
+        element: <ToolList />,
       },
       {
         path: "/table-test",

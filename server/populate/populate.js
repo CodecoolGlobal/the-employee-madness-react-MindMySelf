@@ -7,6 +7,8 @@ const names = require("./names.json");
 const levels = require("./levels.json");
 const positions = require("./positions.json");
 const EmployeeModel = require("../db/employee.model");
+const toolnames = require("./tools.json");
+const ToolModel = require("../db/tool.model");
 
 const mongoUrl = process.env.MONGO_URL;
 
@@ -16,6 +18,8 @@ if (!mongoUrl) {
 }
 
 const pick = (from) => from[Math.floor(Math.random() * (from.length - 0))];
+
+const makeWeigth = (max, min) => Math.floor(Math.random() * max) - min;
 
 const populateEmployees = async () => {
   await EmployeeModel.deleteMany({});
@@ -30,10 +34,23 @@ const populateEmployees = async () => {
   console.log("Employees created");
 };
 
+const makeTools = async () => {
+  await ToolModel.deleteMany({});
+
+  const tools = toolnames.map((name) => ({
+    name,
+    weigth: makeWeigth(5, 1)
+  }));
+
+  await ToolModel.create(...tools);
+  console.log("Tools created");
+}
+
 const main = async () => {
   await mongoose.connect(mongoUrl);
 
   await populateEmployees();
+  await makeTools();
 
   await mongoose.disconnect();
 };
