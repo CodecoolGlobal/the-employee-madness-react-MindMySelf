@@ -1,0 +1,11 @@
+[
+    { "name": "Main Actor", "salary": 1200 },
+    { "name": "Comic Relief", "salary": 1000 },
+    { "name": "Love Interests", "salary": 1500 },
+    { "name": "Protagonist", "salary": 2000 },
+    { "name": "Antagonist", "salary": 2100 },
+    { "name": "Operatour", "salary": 1000 },
+    { "name": "Director", "salary": 3200 },
+    { "name": "Joker", "salary": 600 },
+    { "name": "Superhero", "salary": 1500 }
+]
