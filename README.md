@@ -169,7 +169,10 @@ npm start
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This is an employee management site with various extensions. Every branch contains a feature, after switching between them you need to do the Prepare the database and Running the code on the backend again.
+The user can browse through a list of employees through multiply pages.
+The user can create, modify and delete employees from the list.
+The user can apply various filtering methods to search employess by different attributes.
+The user can search for employees with the help of a searchbar.
 
 <p align="right"><a href="#readme-top">:top:</a></p>
 
@@ -187,7 +190,7 @@ This project was made by Cselőtei Gergely a Codecool student.
 <!-- CONTACT -->
 ## Contact
 
-:man_technologist: Gergely Cselőtei - :email: cseloteigergely[at]gmail[dot]com [![LinkedIn][linkedin-shield]][linkedin-Gergely]<br>
+:man_technologist: Gergely Cselőtei   [![LinkedIn][linkedin-shield]][linkedin-Gergely]<br>
 
 
 <p align="right"><a href="#readme-top">:top:</a></p>
@@ -197,13 +200,13 @@ This project was made by Cselőtei Gergely a Codecool student.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/CodecoolGlobal/the-employee-madness-react-MindMySelf?style=for-the-badge
 [contributors-url]: https://github.com/CodecoolGlobal/the-employee-madness-react-MindMySelf/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/CodecoolGlobal/the-employee-madness-react-MindMySelf?style=for-the-badge
 [forks-url]: https://github.com/MindMySelf/OOP_TW3/forks
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/CodecoolGlobal/the-employee-madness-react-MindMySelf?style=for-the-badge
 [stars-url]: https://github.com/CodecoolGlobal/the-employee-madness-react-MindMySelf/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/CodecoolGlobal/the-employee-madness-react-MindMySelf?style=for-the-badge
 [issues-url]: https://github.com/CodecoolGlobal/the-employee-madness-react-MindMySelf/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-Gergely]: https://www.linkedin.com/in/gergely-csel%C5%91tei-4469a127a/
